@@ -34,6 +34,7 @@ The primary goal is to calculate and analyze the electronic structure properties
 ```
 .
 ├── tmd_report.pdf           ← Project description
+├── tmd_pres_slides.pdf.pdf  ← Presentation slides
 ├── requirements.yaml        ← Conda environment  
 └── TMD_codes/               ← All scripts, data & workflows  
     ├── tmd_bs.py            ← Band structure calculator  
