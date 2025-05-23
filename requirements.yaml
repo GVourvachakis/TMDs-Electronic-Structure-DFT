@@ -1,0 +1,75 @@
+# TMD Band Structure Project Dependencies
+# Dependencies for tmd_bs.py, mx2_utils.py, and dos_tmd.py modules
+
+name: tmd-band-structure-dos
+description: Transition Metal Dichalcogenide (TMD) band structure and density of states calculation tools
+
+dependencies:
+  # Core scientific computing
+  numpy: ">=2.2.3"
+  matplotlib: ">=3.6.3"
+  
+  # Atomic Simulation Environment
+  ase: ">=3.24.0"
+  
+  # GPAW electronic structure calculations
+  gpaw: ">=25.1.0"
+  
+  # Standard library (included with Python)
+  argparse: ">=1.1"
+  json: ">=2.0.9"
+  os: "*"  # Built-in module
+
+# Optional dependencies for enhanced functionality
+optional_dependencies:
+  mpl_toolkits: "*"  # For 3D plotting capabilities
+
+# Module structure
+modules:
+  - name: tmd_bs.py
+    description: Main module for TMD band structure calculations
+    key_features:
+      - Ionic relaxation with BFGS optimizer
+      - Band structure calculations with spin-orbit coupling
+      - K-point path generation and band plotting
+      - GPAW calculator setup and configuration
+    
+  - name: mx2_utils.py
+    description: Utility functions for MX2 systems
+    key_features:
+      - Custom MX2 structure generation
+      - Band structure plotting utilities
+      - K-point path visualization
+      - 3D plotting support
+    
+  - name: dos_tmd.py
+    description: Density of states calculations for TMD materials
+    key_features:
+      - DOS calculation using GPAW
+      - DOS plotting and analysis
+      - Integration with band structure module
+
+# System requirements
+system_requirements:
+  python: ">=3.8"
+  operating_system: 
+    - Linux (recommended)
+    - macOS
+    - Windows (with appropriate MPI setup for GPAW)
+
+# Installation notes
+installation_notes: |
+  1. GPAW requires proper MPI setup for parallel calculations
+  2. ASE and GPAW may require additional setup for pseudopotentials
+  3. matplotlib requires backend configuration for headless systems
+  4. Some GPAW features may require compilation with specific libraries
+
+# Key computational features
+computational_features:
+  - Electronic band structure calculations
+  - Density of states analysis
+  - Spin-orbit coupling effects
+  - Ionic structure optimization
+  - Parallel computing support via MPI
+  - Custom k-point path generation
+  - Targeted plotting and visualization

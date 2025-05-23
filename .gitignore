@@ -1,0 +1,20 @@
+# Exclude everything by default
+*
+
+# Then include only what we want
+!README.md
+!requirements.yaml
+!tmd_report.pdf
+!TMD_codes/
+!TMD_codes/**
+!.gitignore
+
+# But still exclude certain file types within TMD_codes
+# TMD_codes/**/*.gpw
+# TMD_codes/**/*.traj
+TMD_codes/**/*.log
+TMD_codes/**/*.out
+TMD_codes/**/__pycache__/
+TMD_codes/**/*.pyc
+TMD_codes/**/*.tmp
+TMD_codes/**/*.temp

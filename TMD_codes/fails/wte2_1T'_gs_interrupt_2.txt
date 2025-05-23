@@ -1,0 +1,545 @@
+
+  ___ ___ ___ _ _ _  
+ |   |   |_  | | | | 
+ | | | | | . | | | | 
+ |__ |  _|___|_____|  25.1.0
+ |___|_|             
+
+User:   georgios-vourvachakis@georgios-vourvachakis-82K2
+Date:   Mon Apr 14 23:11:40 2025
+Arch:   x86_64
+Pid:    462312
+CWD:    /home/georgios-vourvachakis/Desktop/DFT_codes
+Python: 3.12.3
+gpaw:   /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/gpaw
+_gpaw:  /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/
+        _gpaw.cpython-312-x86_64-linux-gnu.so
+ase:    /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/ase (version 3.24.0)
+numpy:  /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/numpy (version 2.2.3)
+scipy:  /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/scipy (version 1.15.1)
+libxc:  5.2.3
+units:  Angstrom and eV
+cores: 1
+OpenMP: False
+OMP_NUM_THREADS: 1
+
+Reading from wte2_1T'_initial.gpw
+Read dipole, energy, free_energy, magmom, magmoms
+Reading input parameters:
+  convergence: {bands: occupied,
+                density: 0.001,
+                eigenstates: 4e-08,
+                energy: 0.0001}
+  kpts: {gamma: True,
+         size: [5, 5, 1]}
+  maxiter: 100
+  mixer: {backend: pulay,
+          beta: 0.1,
+          method: separate,
+          nmaxold: 5,
+          weight: 50.0}
+  mode: {ecut: 400.0,
+         name: pw}
+  occupations: {name: fermi-dirac,
+                width: 0.05}
+  setups: {W: :d,2.5}
+  spinpol: False
+  symmetry: off
+  xc: PBE
+
+Initialize ...
+
+species:
+  W:
+    name: Tungsten
+    id: 3ed563b7d19992259c4d7db283f2ff78
+    Z: 74.0
+    valence: 14
+    core: 60
+    charge: 0.0
+    Hubbard: {U: 2.5,  # eV
+              l: 2,
+              scale: True}
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/W.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.40,
+                           lmax: 2}
+    cutoffs: {filter: 2.36,
+              core: 3.02}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -78.830   1.344
+      - 6s(2.00)    -5.697   1.344
+      - 5p(6.00)   -43.233   1.355
+      - 6p(0.00)    -1.367   1.355
+      - 5d(4.00)    -4.494   1.228
+      -  d          22.717   1.228
+  
+    # Using partial waves for W as LCAO basis
+
+  Te:
+    name: Tellurium
+    id: e44b9ef4772d7e5a1c6a47e6d6496588
+    Z: 52.0
+    valence: 6
+    core: 46
+    charge: 0.0
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/Te.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.36,
+                           lmax: 2}
+    cutoffs: {filter: 2.09,
+              core: 3.17}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -15.089   1.180
+      - 5p(4.00)    -5.955   1.196
+      -  s          12.123   1.180
+      -  p          21.256   1.196
+      -  d           0.000   1.238
+  
+    # Using partial waves for Te as LCAO basis
+
+Reference energy: -1616706.077045  # eV
+
+Spin-paired calculation
+
+Convergence criteria:
+ Maximum [total energy] change in last 3 cyles: 0.0001 eV / valence electron
+ Maximum integral of absolute [dens]ity change: 0.001 electrons / valence electron
+ Maximum integral of absolute [eigenst]ate change: 4e-08 eV^2 / valence electron
+ Maximum number of scf [iter]ations: 100
+ (Square brackets indicate name in SCF output, whereas a 'c' in
+ the SCF output indicates the quantity has converged.)
+
+Symmetries present (total): 1
+
+  ( 1  0  0)
+  ( 0  1  0)
+  ( 0  0  1)
+
+25 k-points: 5 x 5 x 1 Monkhorst-Pack grid
+25 k-points in the irreducible part of the Brillouin zone
+       k-points in crystal coordinates                weights
+   0:    -0.40000000   -0.40000000    0.00000000          1/25
+   1:    -0.40000000   -0.20000000    0.00000000          1/25
+   2:    -0.40000000    0.00000000    0.00000000          1/25
+   3:    -0.40000000    0.20000000    0.00000000          1/25
+   4:    -0.40000000    0.40000000    0.00000000          1/25
+   5:    -0.20000000   -0.40000000    0.00000000          1/25
+   6:    -0.20000000   -0.20000000    0.00000000          1/25
+   7:    -0.20000000    0.00000000    0.00000000          1/25
+   8:    -0.20000000    0.20000000    0.00000000          1/25
+   9:    -0.20000000    0.40000000    0.00000000          1/25
+          ...
+  24:     0.40000000    0.40000000    0.00000000          1/25
+
+Wave functions: Plane wave expansion
+  Cutoff energy: 400.000 eV
+  Number of coefficients (min, max): 34320, 34511
+  Pulay-stress correction: 0.000000 eV/Ang^3 (de/decut=0.000000)
+  Using Numpy's FFT
+  ScaLapack parameters: grid=1x1, blocksize=None
+  Wavefunction extrapolation:
+    Improved wavefunction reuse through dual PAW basis 
+
+Occupation numbers: Fermi-Dirac:
+  width: 0.0500  # eV
+ 
+
+Eigensolver
+   Davidson(niter=2) 
+
+Densities:
+  Coarse grid: 35*30*200 grid
+  Fine grid: 70*60*400 grid
+  Total Charge: 0.000000 
+
+Density mixing:
+  Method: separate
+  Backend: pulay
+  Linear mixing parameter: 0.1
+  old densities: 5
+  Damping of long wavelength oscillations: 50 
+
+Hamiltonian:
+  XC and Coulomb potentials evaluated on a 70*60*400 grid
+  Using the PBE Exchange-Correlation functional
+  External potential:
+    NoExternalPotential
+ 
+
+XC parameters: PBE with 2 nearest neighbor stencil
+
+Memory estimate:
+  Process memory now: 244.64 MiB
+  Calculator: 781.28 MiB
+    Density: 103.41 MiB
+      Arrays: 41.66 MiB
+      Localized functions: 45.74 MiB
+      Mixer: 16.02 MiB
+    Hamiltonian: 28.35 MiB
+      Arrays: 27.24 MiB
+      XC: 0.00 MiB
+      Poisson: 0.00 MiB
+      vbar: 1.12 MiB
+    Wavefunctions: 649.51 MiB
+      Arrays psit_nG: 473.94 MiB
+      Eigensolver: 21.79 MiB
+      Projections: 1.21 MiB
+      Projectors: 131.40 MiB
+      PW-descriptor: 21.18 MiB
+
+Total number of cores used: 1
+
+Number of atoms: 6
+Number of atomic orbitals: 42
+Number of bands in calculation: 36
+Number of valence electrons: 52
+Bands to converge: occupied
+
+... initialized
+
+Input parameters:
+  convergence: {density: 0.0001,
+                eigenstates: 1e-06,
+                energy: 0.0001}
+  kpts: {gamma: True,
+         size: (15, 15, 1)}
+  maxiter: 200
+  mixer: {backend: pulay,
+          beta: 0.15,
+          method: separate,
+          nmaxold: 10,
+          weight: 50.0}
+  nbands: 40
+  occupations: {fixmagmom: False,
+                name: fermi-dirac,
+                width: 0.01}
+  spinpol: True
+
+System changes: initial_magmoms 
+
+Initialize ...
+
+species:
+  W:
+    name: Tungsten
+    id: 3ed563b7d19992259c4d7db283f2ff78
+    Z: 74.0
+    valence: 14
+    core: 60
+    charge: 0.0
+    Hubbard: {U: 2.5,  # eV
+              l: 2,
+              scale: True}
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/W.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.40,
+                           lmax: 2}
+    cutoffs: {filter: 2.36,
+              core: 3.02}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -78.830   1.344
+      - 6s(2.00)    -5.697   1.344
+      - 5p(6.00)   -43.233   1.355
+      - 6p(0.00)    -1.367   1.355
+      - 5d(4.00)    -4.494   1.228
+      -  d          22.717   1.228
+  
+    # Using partial waves for W as LCAO basis
+
+  Te:
+    name: Tellurium
+    id: e44b9ef4772d7e5a1c6a47e6d6496588
+    Z: 52.0
+    valence: 6
+    core: 46
+    charge: 0.0
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/Te.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.36,
+                           lmax: 2}
+    cutoffs: {filter: 2.09,
+              core: 3.17}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -15.089   1.180
+      - 5p(4.00)    -5.955   1.196
+      -  s          12.123   1.180
+      -  p          21.256   1.196
+      -  d           0.000   1.238
+  
+    # Using partial waves for Te as LCAO basis
+
+Reference energy: -1616706.077045  # eV
+
+Spin-polarized calculation.
+Magnetic moment: 1.000000
+
+Convergence criteria:
+ Maximum [total energy] change in last 3 cyles: 0.0001 eV / valence electron
+ Maximum integral of absolute [dens]ity change: 0.0001 electrons / valence electron
+ Maximum integral of absolute [eigenst]ate change: 1e-06 eV^2 / valence electron
+ Maximum number of scf [iter]ations: 200
+ (Square brackets indicate name in SCF output, whereas a 'c' in
+ the SCF output indicates the quantity has converged.)
+
+Symmetries present (total): 1
+
+  ( 1  0  0)
+  ( 0  1  0)
+  ( 0  0  1)
+
+225 k-points: 15 x 15 x 1 Monkhorst-Pack grid
+225 k-points in the irreducible part of the Brillouin zone
+       k-points in crystal coordinates                weights
+   0:    -0.46666667   -0.46666667    0.00000000          1/225
+   1:    -0.46666667   -0.40000000    0.00000000          1/225
+   2:    -0.46666667   -0.33333333    0.00000000          1/225
+   3:    -0.46666667   -0.26666667    0.00000000          1/225
+   4:    -0.46666667   -0.20000000    0.00000000          1/225
+   5:    -0.46666667   -0.13333333    0.00000000          1/225
+   6:    -0.46666667   -0.06666667    0.00000000          1/225
+   7:    -0.46666667    0.00000000    0.00000000          1/225
+   8:    -0.46666667    0.06666667    0.00000000          1/225
+   9:    -0.46666667    0.13333333    0.00000000          1/225
+          ...
+ 224:     0.46666667    0.46666667    0.00000000          1/225
+
+Wave functions: Plane wave expansion
+  Cutoff energy: 400.000 eV
+  Number of coefficients (min, max): 34320, 34524
+  Pulay-stress correction: 0.000000 eV/Ang^3 (de/decut=0.000000)
+  Using Numpy's FFT
+  ScaLapack parameters: grid=1x1, blocksize=None
+  Wavefunction extrapolation:
+    Improved wavefunction reuse through dual PAW basis 
+
+Occupation numbers: Fermi-Dirac:
+  width: 0.0100  # eV
+ 
+
+Eigensolver
+   Davidson(niter=2) 
+
+Densities:
+  Coarse grid: 35*30*200 grid
+  Fine grid: 70*60*400 grid
+  Total Charge: 0.000000 
+
+Density mixing:
+  Method: separate
+  Backend: pulay
+  Linear mixing parameter: 0.15
+  old densities: 10
+  Damping of long wavelength oscillations: 50 
+
+Hamiltonian:
+  XC and Coulomb potentials evaluated on a 70*60*400 grid
+  Using the PBE Exchange-Correlation functional
+  External potential:
+    NoExternalPotential
+ 
+
+XC parameters: PBE with 2 nearest neighbor stencil
+
+Memory estimate:
+  Process memory now: 397.60 MiB
+  Calculator: 11048.23 MiB
+    Density: 165.90 MiB
+      Arrays: 56.08 MiB
+      Localized functions: 45.74 MiB
+      Mixer: 64.09 MiB
+    Hamiltonian: 42.77 MiB
+      Arrays: 41.66 MiB
+      XC: 0.00 MiB
+      Poisson: 0.00 MiB
+      vbar: 1.12 MiB
+    Wavefunctions: 10839.56 MiB
+      Arrays psit_nG: 9482.30 MiB
+      Eigensolver: 23.95 MiB
+      Projections: 24.17 MiB
+      Projectors: 1182.60 MiB
+      PW-descriptor: 126.54 MiB
+
+Total number of cores used: 1
+
+Number of atoms: 6
+Number of atomic orbitals: 42
+Number of bands in calculation: 40
+Number of valence electrons: 52
+Bands to converge: occupied
+
+... initialized
+
+Initializing position-dependent things.
+
+Density initialized from atomic densities
+Creating initial wave functions:
+  40 bands from LCAO basis set
+
+     .----------------.  
+    /|                |  
+   / |                |  
+  /  |                |  
+ *   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   | Te       W     |  
+ |   |                |  
+ |   |                |  
+ W   |  Te            |  
+ |   |                |  
+ |   Te       Te      |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   .----------------.  
+ |  /                /   
+ | /                /    
+ |/                /     
+ *----------------*      
+
+Positions:
+   0 W      0.000000    0.000000   21.595000    ( 0.0000,  0.0000,  0.5000)
+   1 Te     3.061600    0.000000   21.595000    ( 0.0000,  0.0000,  0.0000)
+   2 Te     1.780000    3.083050   23.190000    ( 0.0000,  0.0000,  0.0000)
+   3 W      5.340000    3.083050   23.190000    ( 0.0000,  0.0000,  0.5000)
+   4 Te     1.780000    0.000000   20.000000    ( 0.0000,  0.0000,  0.0000)
+   5 Te     5.340000    0.000000   20.000000    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    7.120000    0.000000    0.000000    35     0.2034
+  2. axis:    yes    0.000000    6.166101    0.000000    30     0.2055
+  3. axis:    no     0.000000    0.000000   43.190000   200     0.2159
+
+  Lengths:   7.120000   6.166101  43.190000
+  Angles:   90.000000  90.000000  90.000000
+
+Effective grid spacing dv^(1/3) = 0.2082
+
+     iter     time        total  log10-change:  magmom
+                         energy   eigst   dens
+iter:   1 23:24:27   -11.138073                   +1.0002
+iter:   2 23:33:30   -14.869105   -0.81  -1.00    +1.1407
+iter:   3 23:42:37   -10.593672   -1.46  -0.82    +1.1526
+iter:   4 23:52:25   -10.597156   -2.20  -1.14    +1.2555
+iter:   5 00:02:29   -11.031985   -1.73  -1.16    +1.6005
+iter:   6 00:13:10   -11.177537   -2.35  -1.10    +1.7307
+iter:   7 00:24:18   -12.674772   -1.75  -1.12    +1.7627
+iter:   8 00:35:23   -14.227224   -2.02  -1.09    +1.6370
+iter:   9 00:46:28   -12.574362   -2.33  -0.99    +2.0747
+iter:  10 00:57:44   -12.114825   -1.49  -1.05    +2.6093
+iter:  11 01:09:46   -12.219661   -2.33  -1.18    +3.1211
+iter:  12 01:19:20   -12.675760   -1.56  -1.17    +4.6556
+iter:  13 01:28:47   -34.759180   -0.03  -1.10    +5.3832
+iter:  14 01:38:07  -118.384562   +0.60  -0.56    +5.4679
+iter:  15 01:47:26  -309.332689   +0.85  -0.19    +5.6322
+iter:  16 01:56:38  -569.661913   +0.88  +0.03    +5.5274
+iter:  17 02:05:58    57.823785   +1.71  +0.13    +3.3110
+iter:  18 02:15:06     2.577681   +0.94  -0.55    +3.0536
+iter:  19 02:24:23    -7.578843   +0.27  -1.05    +2.8765
+iter:  20 02:33:36   -11.449673   -0.17  -1.25    +2.7531
+iter:  21 02:42:54   -17.599756   -0.36  -1.24    +2.6911
+iter:  22 02:52:07   -23.114859   -0.77  -1.08    +2.5311
+iter:  23 03:01:19   -16.071600   -1.28  -0.99    +3.2149
+iter:  24 03:10:32   -13.980955   -1.69  -1.08    +3.6335
+iter:  25 03:19:47   -12.906725   -1.90  -1.09    +3.9274
+iter:  26 03:28:57   -13.173434   -2.05  -1.10    +3.8773
+iter:  27 03:38:12   -15.421236   -2.01  -1.08    +3.5445
+iter:  28 03:47:26   -13.827688   -2.26  -1.01    +3.6665
+iter:  29 03:56:41   -13.066787   -2.00  -1.06    +3.6302
+iter:  30 04:05:58   -12.892546   -1.72  -1.11    +4.3134
+iter:  31 04:15:12   -12.456069   -2.25  -1.14    +4.6604
+iter:  32 04:24:23   -15.979273   -1.73  -1.16    +4.5864
+iter:  33 04:33:42   -14.661478   -2.65  -1.06    +4.8394
+iter:  34 04:43:01   -15.451780   -2.35  -1.07    +4.7135
+iter:  35 04:52:18   -14.903666   -3.50  -1.07    +4.8334
+iter:  36 05:01:36   -12.911465   -2.36  -1.06    +5.1496
+iter:  37 05:10:59   -13.717532   -2.77  -1.06    +4.9289
+iter:  38 05:20:16   -13.102486   -2.29  -1.07    +4.6006
+iter:  39 05:29:34   -15.234757   -1.60  -1.10    +4.6247
+iter:  40 05:38:51   -14.274353   -1.89  -1.03    +4.6499
+iter:  41 05:48:12   -16.295349   -1.88  -1.10    +4.4859
+iter:  42 05:57:34   -13.759468   -1.80  -0.93    +4.6424
+iter:  43 06:07:01   -12.990225   -2.34  -1.17    +4.9398
+iter:  44 06:16:24   -14.630449   -1.31  -1.19    +5.0413
+iter:  45 06:25:39   -14.898121   -2.64  -1.26    +5.1659
+iter:  46 06:34:58   -13.947826   -2.47  -1.26    +5.2322
+iter:  47 06:44:18   -14.296446   -2.69  -1.28    +5.1313
+iter:  48 06:53:34   -15.447720   -2.08  -1.26    +4.7202
+iter:  49 07:02:55   -14.776497   -2.64  -1.30    +4.7899
+iter:  50 07:12:14   -14.931062   -2.93  -1.25    +4.8051
+iter:  51 07:21:35   -15.487370   -1.81  -1.23    +4.8524
+iter:  52 07:30:53   -15.135795   -2.50  -1.27    +4.9195
+iter:  53 07:40:23   -15.625972   -2.44  -1.30    +4.9005
+iter:  54 07:49:42   -13.867708   -2.08  -1.29    +4.9670
+iter:  55 07:58:59   -13.929087   -2.69  -1.29    +4.9413
+iter:  56 08:08:25   -13.917851   -2.77  -1.27    +4.8794
+iter:  57 08:17:50   -13.947243   -3.49  -1.28    +4.8575
+iter:  58 08:27:09   -13.963351   -3.00  -1.27    +4.7783
+iter:  59 08:36:29   -14.165094   -2.58  -1.32    +4.3755
+iter:  60 08:45:49   -14.354674   -3.02  -1.35    +4.3690
+iter:  61 08:55:03   -15.126180   -2.58  -1.31    +4.3752
+iter:  62 09:04:22   -15.279783   -3.58  -1.25    +4.3040
+iter:  63 09:13:43   -15.450624   -3.87  -1.25    +4.3096
+iter:  64 09:23:01   -14.309101   -1.94  -1.25    +4.3215
+iter:  65 09:32:21   -13.893804   -2.61  -1.40    +4.5651
+iter:  66 09:41:37   -14.505850   -2.78  -1.30    +4.3658
+iter:  67 09:50:55   -13.646071   -2.29  -1.35    +4.1694
+iter:  68 10:00:17   -14.451534   -1.90  -1.44    +4.0033
+iter:  69 10:09:50   -14.085896   -3.20  -1.14    +4.0351
+iter:  70 10:19:48   -14.419537   -2.14  -1.22    +3.9634
+iter:  71 10:30:11   -13.946023   -2.58  -1.12    +3.9741
+iter:  72 10:42:40   -13.574547   -2.97  -1.25    +3.9569
+iter:  73 10:53:18   -13.674184   -3.15  -1.39    +3.8874
+iter:  74 11:05:15   -14.476474   -2.41  -1.35    +3.6927
+iter:  75 11:17:37   -16.110137   -2.43  -1.07    +3.6873
+iter:  76 11:30:47   -15.297134   -2.87  -0.91    +3.7504
+iter:  77 11:42:29   -13.417064   -1.70  -0.99    +3.9840
+iter:  78 11:53:20   -13.779108   -2.74  -1.43    +3.9403
+iter:  79 12:06:04   -13.423910   -2.22  -1.31    +3.9326
+iter:  80 12:18:47   -13.307366   -2.57  -1.49    +3.8919
+iter:  81 12:30:41   -13.925246   -2.11  -1.53    +3.7663
+iter:  82 12:41:10   -13.463211   -2.01  -1.24    +3.9262
+iter:  83 12:52:46   -13.368704   -3.05  -1.54    +3.8809

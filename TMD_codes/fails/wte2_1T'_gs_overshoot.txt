@@ -1,0 +1,547 @@
+
+  ___ ___ ___ _ _ _  
+ |   |   |_  | | | | 
+ | | | | | . | | | | 
+ |__ |  _|___|_____|  25.1.0
+ |___|_|             
+
+User:   georgios-vourvachakis@georgios-vourvachakis-82K2
+Date:   Mon Apr 14 19:35:12 2025
+Arch:   x86_64
+Pid:    200135
+CWD:    /home/georgios-vourvachakis/Desktop/DFT_codes
+Python: 3.12.3
+gpaw:   /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/gpaw
+_gpaw:  /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/
+        _gpaw.cpython-312-x86_64-linux-gnu.so
+ase:    /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/ase (version 3.24.0)
+numpy:  /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/numpy (version 2.2.3)
+scipy:  /home/georgios-vourvachakis/Desktop/DFT_codes/.venv/lib/python3.12/site-packages/scipy (version 1.15.1)
+libxc:  5.2.3
+units:  Angstrom and eV
+cores: 1
+OpenMP: False
+OMP_NUM_THREADS: 1
+
+Reading from wte2_1T'_initial.gpw
+Read dipole, energy, free_energy, magmom, magmoms
+Reading input parameters:
+  convergence: {bands: occupied,
+                density: 0.001,
+                eigenstates: 4e-08,
+                energy: 0.0001}
+  kpts: {gamma: True,
+         size: [5, 5, 1]}
+  maxiter: 100
+  mixer: {backend: pulay,
+          beta: 0.1,
+          method: separate,
+          nmaxold: 5,
+          weight: 50.0}
+  mode: {ecut: 400.0,
+         name: pw}
+  occupations: {name: fermi-dirac,
+                width: 0.05}
+  setups: {W: :d,2.8}
+  spinpol: False
+  symmetry: off
+  xc: PBE
+
+Initialize ...
+
+species:
+  W:
+    name: Tungsten
+    id: 3ed563b7d19992259c4d7db283f2ff78
+    Z: 74.0
+    valence: 14
+    core: 60
+    charge: 0.0
+    Hubbard: {U: 2.8,  # eV
+              l: 2,
+              scale: True}
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/W.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.40,
+                           lmax: 2}
+    cutoffs: {filter: 2.36,
+              core: 3.02}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -78.830   1.344
+      - 6s(2.00)    -5.697   1.344
+      - 5p(6.00)   -43.233   1.355
+      - 6p(0.00)    -1.367   1.355
+      - 5d(4.00)    -4.494   1.228
+      -  d          22.717   1.228
+  
+    # Using partial waves for W as LCAO basis
+
+  Te:
+    name: Tellurium
+    id: e44b9ef4772d7e5a1c6a47e6d6496588
+    Z: 52.0
+    valence: 6
+    core: 46
+    charge: 0.0
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/Te.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.36,
+                           lmax: 2}
+    cutoffs: {filter: 2.09,
+              core: 3.17}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -15.089   1.180
+      - 5p(4.00)    -5.955   1.196
+      -  s          12.123   1.180
+      -  p          21.256   1.196
+      -  d           0.000   1.238
+  
+    # Using partial waves for Te as LCAO basis
+
+Reference energy: -1616706.077045  # eV
+
+Spin-paired calculation
+
+Convergence criteria:
+ Maximum [total energy] change in last 3 cyles: 0.0001 eV / valence electron
+ Maximum integral of absolute [dens]ity change: 0.001 electrons / valence electron
+ Maximum integral of absolute [eigenst]ate change: 4e-08 eV^2 / valence electron
+ Maximum number of scf [iter]ations: 100
+ (Square brackets indicate name in SCF output, whereas a 'c' in
+ the SCF output indicates the quantity has converged.)
+
+Symmetries present (total): 1
+
+  ( 1  0  0)
+  ( 0  1  0)
+  ( 0  0  1)
+
+25 k-points: 5 x 5 x 1 Monkhorst-Pack grid
+25 k-points in the irreducible part of the Brillouin zone
+       k-points in crystal coordinates                weights
+   0:    -0.40000000   -0.40000000    0.00000000          1/25
+   1:    -0.40000000   -0.20000000    0.00000000          1/25
+   2:    -0.40000000    0.00000000    0.00000000          1/25
+   3:    -0.40000000    0.20000000    0.00000000          1/25
+   4:    -0.40000000    0.40000000    0.00000000          1/25
+   5:    -0.20000000   -0.40000000    0.00000000          1/25
+   6:    -0.20000000   -0.20000000    0.00000000          1/25
+   7:    -0.20000000    0.00000000    0.00000000          1/25
+   8:    -0.20000000    0.20000000    0.00000000          1/25
+   9:    -0.20000000    0.40000000    0.00000000          1/25
+          ...
+  24:     0.40000000    0.40000000    0.00000000          1/25
+
+Wave functions: Plane wave expansion
+  Cutoff energy: 400.000 eV
+  Number of coefficients (min, max): 34320, 34511
+  Pulay-stress correction: 0.000000 eV/Ang^3 (de/decut=0.000000)
+  Using Numpy's FFT
+  ScaLapack parameters: grid=1x1, blocksize=None
+  Wavefunction extrapolation:
+    Improved wavefunction reuse through dual PAW basis 
+
+Occupation numbers: Fermi-Dirac:
+  width: 0.0500  # eV
+ 
+
+Eigensolver
+   Davidson(niter=2) 
+
+Densities:
+  Coarse grid: 35*30*200 grid
+  Fine grid: 70*60*400 grid
+  Total Charge: 0.000000 
+
+Density mixing:
+  Method: separate
+  Backend: pulay
+  Linear mixing parameter: 0.1
+  old densities: 5
+  Damping of long wavelength oscillations: 50 
+
+Hamiltonian:
+  XC and Coulomb potentials evaluated on a 70*60*400 grid
+  Using the PBE Exchange-Correlation functional
+  External potential:
+    NoExternalPotential
+ 
+
+XC parameters: PBE with 2 nearest neighbor stencil
+
+Memory estimate:
+  Process memory now: 245.00 MiB
+  Calculator: 781.28 MiB
+    Density: 103.41 MiB
+      Arrays: 41.66 MiB
+      Localized functions: 45.74 MiB
+      Mixer: 16.02 MiB
+    Hamiltonian: 28.35 MiB
+      Arrays: 27.24 MiB
+      XC: 0.00 MiB
+      Poisson: 0.00 MiB
+      vbar: 1.12 MiB
+    Wavefunctions: 649.51 MiB
+      Arrays psit_nG: 473.94 MiB
+      Eigensolver: 21.79 MiB
+      Projections: 1.21 MiB
+      Projectors: 131.40 MiB
+      PW-descriptor: 21.18 MiB
+
+Total number of cores used: 1
+
+Number of atoms: 6
+Number of atomic orbitals: 42
+Number of bands in calculation: 36
+Number of valence electrons: 52
+Bands to converge: occupied
+
+... initialized
+
+Input parameters:
+  convergence: {density: 0.0001,
+                eigenstates: 1e-07,
+                energy: 1e-05}
+  kpts: {gamma: True,
+         size: (15, 15, 1)}
+  maxiter: 200
+  mixer: {backend: pulay,
+          beta: 0.05,
+          method: separate,
+          nmaxold: 8,
+          weight: 50.0}
+  nbands: 36
+  occupations: {fixmagmom: False,
+                name: fermi-dirac,
+                width: 0.01}
+  spinpol: True
+
+System changes: initial_magmoms 
+
+Initialize ...
+
+species:
+  W:
+    name: Tungsten
+    id: 3ed563b7d19992259c4d7db283f2ff78
+    Z: 74.0
+    valence: 14
+    core: 60
+    charge: 0.0
+    Hubbard: {U: 2.8,  # eV
+              l: 2,
+              scale: True}
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/W.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.40,
+                           lmax: 2}
+    cutoffs: {filter: 2.36,
+              core: 3.02}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -78.830   1.344
+      - 6s(2.00)    -5.697   1.344
+      - 5p(6.00)   -43.233   1.355
+      - 6p(0.00)    -1.367   1.355
+      - 5d(4.00)    -4.494   1.228
+      -  d          22.717   1.228
+  
+    # Using partial waves for W as LCAO basis
+
+  Te:
+    name: Tellurium
+    id: e44b9ef4772d7e5a1c6a47e6d6496588
+    Z: 52.0
+    valence: 6
+    core: 46
+    charge: 0.0
+    file: /home/georgios-vourvachakis/Desktop/DFT_codes/gpaw_datasets/gpaw-setups-0.9.20000/Te.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.36,
+                           lmax: 2}
+    cutoffs: {filter: 2.09,
+              core: 3.17}
+    projectors:
+      #              energy  rcut
+      - 5s(2.00)   -15.089   1.180
+      - 5p(4.00)    -5.955   1.196
+      -  s          12.123   1.180
+      -  p          21.256   1.196
+      -  d           0.000   1.238
+  
+    # Using partial waves for Te as LCAO basis
+
+Reference energy: -1616706.077045  # eV
+
+Spin-polarized calculation.
+Magnetic moment: 2.000000
+
+Convergence criteria:
+ Maximum [total energy] change in last 3 cyles: 1e-05 eV / valence electron
+ Maximum integral of absolute [dens]ity change: 0.0001 electrons / valence electron
+ Maximum integral of absolute [eigenst]ate change: 1e-07 eV^2 / valence electron
+ Maximum number of scf [iter]ations: 200
+ (Square brackets indicate name in SCF output, whereas a 'c' in
+ the SCF output indicates the quantity has converged.)
+
+Symmetries present (total): 1
+
+  ( 1  0  0)
+  ( 0  1  0)
+  ( 0  0  1)
+
+225 k-points: 15 x 15 x 1 Monkhorst-Pack grid
+225 k-points in the irreducible part of the Brillouin zone
+       k-points in crystal coordinates                weights
+   0:    -0.46666667   -0.46666667    0.00000000          1/225
+   1:    -0.46666667   -0.40000000    0.00000000          1/225
+   2:    -0.46666667   -0.33333333    0.00000000          1/225
+   3:    -0.46666667   -0.26666667    0.00000000          1/225
+   4:    -0.46666667   -0.20000000    0.00000000          1/225
+   5:    -0.46666667   -0.13333333    0.00000000          1/225
+   6:    -0.46666667   -0.06666667    0.00000000          1/225
+   7:    -0.46666667    0.00000000    0.00000000          1/225
+   8:    -0.46666667    0.06666667    0.00000000          1/225
+   9:    -0.46666667    0.13333333    0.00000000          1/225
+          ...
+ 224:     0.46666667    0.46666667    0.00000000          1/225
+
+Wave functions: Plane wave expansion
+  Cutoff energy: 400.000 eV
+  Number of coefficients (min, max): 34320, 34524
+  Pulay-stress correction: 0.000000 eV/Ang^3 (de/decut=0.000000)
+  Using Numpy's FFT
+  ScaLapack parameters: grid=1x1, blocksize=None
+  Wavefunction extrapolation:
+    Improved wavefunction reuse through dual PAW basis 
+
+Occupation numbers: Fermi-Dirac:
+  width: 0.0100  # eV
+ 
+
+Eigensolver
+   Davidson(niter=2) 
+
+Densities:
+  Coarse grid: 35*30*200 grid
+  Fine grid: 70*60*400 grid
+  Total Charge: 0.000000 
+
+Density mixing:
+  Method: separate
+  Backend: pulay
+  Linear mixing parameter: 0.05
+  old densities: 8
+  Damping of long wavelength oscillations: 50 
+
+Hamiltonian:
+  XC and Coulomb potentials evaluated on a 70*60*400 grid
+  Using the PBE Exchange-Correlation functional
+  External potential:
+    NoExternalPotential
+ 
+
+XC parameters: PBE with 2 nearest neighbor stencil
+
+Memory estimate:
+  Process memory now: 397.73 MiB
+  Calculator: 10082.61 MiB
+    Density: 153.08 MiB
+      Arrays: 56.08 MiB
+      Localized functions: 45.74 MiB
+      Mixer: 51.27 MiB
+    Hamiltonian: 42.77 MiB
+      Arrays: 41.66 MiB
+      XC: 0.00 MiB
+      Poisson: 0.00 MiB
+      vbar: 1.12 MiB
+    Wavefunctions: 9886.76 MiB
+      Arrays psit_nG: 8534.07 MiB
+      Eigensolver: 21.80 MiB
+      Projections: 21.75 MiB
+      Projectors: 1182.60 MiB
+      PW-descriptor: 126.54 MiB
+
+Total number of cores used: 1
+
+Number of atoms: 6
+Number of atomic orbitals: 42
+Number of bands in calculation: 36
+Number of valence electrons: 52
+Bands to converge: occupied
+
+... initialized
+
+Initializing position-dependent things.
+
+Density initialized from atomic densities
+Creating initial wave functions:
+  36 bands from LCAO basis set
+
+     .----------------.  
+    /|                |  
+   / |                |  
+  /  |                |  
+ *   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   | Te       W     |  
+ |   |                |  
+ |   |                |  
+ W   |  Te            |  
+ |   |                |  
+ |   Te       Te      |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   |                |  
+ |   .----------------.  
+ |  /                /   
+ | /                /    
+ |/                /     
+ *----------------*      
+
+Positions:
+   0 W      0.000000    0.000000   21.595000    ( 0.0000,  0.0000,  1.0000)
+   1 Te     3.061600    0.000000   21.595000    ( 0.0000,  0.0000,  0.0000)
+   2 Te     1.780000    3.083050   23.190000    ( 0.0000,  0.0000,  0.0000)
+   3 W      5.340000    3.083050   23.190000    ( 0.0000,  0.0000,  1.0000)
+   4 Te     1.780000    0.000000   20.000000    ( 0.0000,  0.0000,  0.0000)
+   5 Te     5.340000    0.000000   20.000000    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    7.120000    0.000000    0.000000    35     0.2034
+  2. axis:    yes    0.000000    6.166101    0.000000    30     0.2055
+  3. axis:    no     0.000000    0.000000   43.190000   200     0.2159
+
+  Lengths:   7.120000   6.166101  43.190000
+  Angles:   90.000000  90.000000  90.000000
+
+Effective grid spacing dv^(1/3) = 0.2082
+
+     iter     time        total  log10-change:  magmom
+                         energy   eigst   dens
+iter:   1 19:47:43   -10.879924                   +2.0004
+iter:   2 19:56:25   -10.842033   -1.02  -1.00    +2.1087
+iter:   3 20:05:19   -11.816960   -1.34  -1.00    +2.2291
+iter:   4 20:13:30   -14.237144   -1.30  -0.98    +2.4568
+iter:   5 20:21:36   -11.022999   -1.36  -0.97    +2.3658
+iter:   6 20:29:55   -16.755434   -1.00  -1.04    +3.1993
+iter:   7 20:38:05   -16.772180   -2.23  -1.03    +3.1932
+iter:   8 20:46:38   -36.691667   -0.57  -1.02    +3.3471
+iter:   9 20:56:10   -27.168695   -1.88  -0.70    +3.5900
+iter:  10 21:04:22   -20.051198   -1.36  -0.82    +4.0218
+iter:  11 21:13:01   -13.856087   -0.63  -1.03    +4.7058
+iter:  12 21:22:46   -13.145771   -2.10  -1.00    +4.4772
+iter:  13 21:32:41   -13.839756   -1.75  -1.13    +4.5926
+Timing:                              incl.     excl.
+-----------------------------------------------------------
+Hamiltonian:                         0.972     0.005   0.0% |
+ Atomic:                             0.213     0.002   0.0% |
+  XC Correction:                     0.211     0.211   0.0% |
+ Calculate atomic Hamiltonians:      0.041     0.041   0.0% |
+ Communicate:                        0.000     0.000   0.0% |
+ Initialize Hamiltonian:             0.003     0.003   0.0% |
+ Poisson:                            0.008     0.008   0.0% |
+ XC 3D grid:                         0.702     0.702   0.0% |
+LCAO initialization:               235.933     0.060   0.0% |
+ LCAO eigensolver:                  33.437     0.015   0.0% |
+  Calculate projections:             0.040     0.040   0.0% |
+  DenseAtomicCorrection:             0.136     0.136   0.0% |
+  Distribute overlap matrix:         0.010     0.010   0.0% |
+  Orbital Layouts:                  18.634    18.634   0.2% |
+  Potential matrix:                  0.129     0.129   0.0% |
+  Sum over cells:                   14.473    14.473   0.2% |
+ LCAO to grid:                     201.449   201.449   2.7% ||
+ Set positions (LCAO WFS):           0.987     0.082   0.0% |
+  Basic WFS set positions:           0.000     0.000   0.0% |
+  Basis functions set positions:     0.000     0.000   0.0% |
+  P tci:                             0.774     0.774   0.0% |
+  ST tci:                            0.122     0.122   0.0% |
+  mktci:                             0.010     0.010   0.0% |
+PWDescriptor:                        1.175     1.175   0.0% |
+Redistribute:                        0.000     0.000   0.0% |
+SCF-cycle:                        7313.140     4.782   0.1% |
+ Davidson:                        6714.526   967.100  12.8% |----|
+  Apply H:                        1244.025  1220.639  16.2% |-----|
+   HMM T:                           23.387    23.387   0.3% |
+  Subspace diag:                  1469.155     0.862   0.0% |
+   calc_h_matrix:                 1331.675    64.319   0.9% |
+    Apply H:                      1267.356  1231.366  16.3% |------|
+     HMM T:                         35.990    35.990   0.5% |
+   diagonalize:                      1.879     1.879   0.0% |
+   rotate_psi:                     134.739   134.739   1.8% ||
+  calc. matrices:                 2735.232   379.193   5.0% |-|
+   Apply H:                       2356.039  2309.053  30.6% |-----------|
+    HMM T:                          46.986    46.986   0.6% |
+  diagonalize:                      35.211    35.211   0.5% |
+  rotate_psi:                      263.804   263.804   3.5% ||
+ Density:                          545.526     0.001   0.0% |
+  Atomic density matrices:           0.552     0.552   0.0% |
+  Mix:                               6.953     6.953   0.1% |
+  Multipole moments:                 0.009     0.009   0.0% |
+  Pseudo density:                  538.012   538.000   7.1% |--|
+   Symmetrize density:               0.011     0.011   0.0% |
+ Hamiltonian:                       14.418     0.180   0.0% |
+  Atomic:                            2.870     0.128   0.0% |
+   XC Correction:                    2.741     2.741   0.0% |
+  Calculate atomic Hamiltonians:     0.578     0.578   0.0% |
+  Communicate:                       0.000     0.000   0.0% |
+  Poisson:                           0.120     0.120   0.0% |
+  XC 3D grid:                       10.669    10.669   0.1% |
+ Orthonormalize:                    33.888     0.174   0.0% |
+  calc_s_matrix:                     2.648     2.648   0.0% |
+  inverse-cholesky:                  0.076     0.076   0.0% |
+  projections:                      25.380    25.380   0.3% |
+  rotate_psi_s:                      5.609     5.609   0.1% |
+Set symmetry:                        0.000     0.000   0.0% |
+Other:                               4.188     4.188   0.1% |
+-----------------------------------------------------------
+Total:                                      7555.409 100.0%
+
+Memory usage: 10.82 GiB
+Date: Mon Apr 14 21:41:08 2025
+
+###
+HERE WE DECIDED TO SWITCH GEARS AND LOWER THE STRONG CORRELATION PARAMETER U (2.8 -> 2.5 eV)
+AND MODIFY THE MIXER.
+###
